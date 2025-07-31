@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'GezerCalendar';
+  src: url('Gezer-Calendar.woff2') format('woff2');
+}
+body {
+  font-family: 'GezerCalendar', serif;
+  direction: rtl;
+  text-align: right;
+  padding: 1em;
+  line-height: 1.6;
+}
