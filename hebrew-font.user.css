@@ -1,0 +1,20 @@
+/* ==UserStyle==
+@name           Hebrew Font - GezerCalendar
+@namespace      arikk40
+@version        1.0.0
+@description    Apply Gezer Calendar font to Hebrew text on all sites
+@license        CC0
+@preprocessor   default
+==/UserStyle== */
+
+@font-face {
+  font-family: 'GezerCalendar';
+  src: url('https://raw.githubusercontent.com/arikk40/hebrew-font/main/Gezer-Calendar.woff2') format('woff2');
+  unicode-range: U+0590-05FF;
+}
+
+*:lang(he),
+*[lang^="he"],
+span, div, p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'GezerCalendar', sans-serif !important;
+}
