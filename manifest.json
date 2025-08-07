@@ -1,0 +1,14 @@
+{
+  "name": "Hebrew Font Browser",
+  "short_name": "HebrewFont",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Browser with Hebrew font override",
+  "icons": [{
+    "src": "https://raw.githubusercontent.com/arikk40/hebrew-font/main/icon.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}
+
