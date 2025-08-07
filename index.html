@@ -1,13 +1,53 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>פונט Gezer Calendar – תצוגה</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="manifest" href="manifest.json">
+  <title>Hebrew Web Viewer</title>
+  <style>
+    @font-face {
+      font-family: 'GezerCalendar';
+      src: url('https://raw.githubusercontent.com/arikk40/hebrew-font/main/Gezer-Calendar.woff2') format('woff2');
+      unicode-range: U+0590-05FF;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      direction: rtl;
+      padding: 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border: none;
+    }
+
+    *:lang(he),
+    *[lang^="he"],
+    span, div, p, h1, h2, h3, h4, h5, h6 {
+      font-family: 'GezerCalendar', sans-serif !important;
+    }
+  </style>
 </head>
 <body>
-  <h1>שלום, זה הפונט העברי העתיק Gezer Calendar!</h1>
-  <p>גדרה זו מדגימה את עיצוב הפונט וקריאותו בעברית.</p>
+  <h2>צפייה בעברית עם פונט Gezer</h2>
+  <form id="loader">
+    <label for="url">הזן כתובת אתר:</label><br>
+    <input type="url" id="url" placeholder="https://www.example.com" required style="width:90%">
+    <button type="submit">טען אתר</button>
+  </form>
+
+  <iframe id="viewer" sandbox="allow-same-origin allow-scripts allow-forms allow-popups"></iframe>
+
+  <script>
+    document.getElementById('loader').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const url = document.getElementById('url').value;
+      document.getElementById('viewer').src = url;
+    });
+  </script>
 </body>
 </html>
